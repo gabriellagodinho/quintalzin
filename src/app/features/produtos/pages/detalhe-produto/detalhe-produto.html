@@ -1,0 +1,50 @@
+<div class="container" *ngIf="produto">
+
+  <!-- HEADER COM IMAGEM -->
+  <div class="header">
+
+    <img [src]="produto.imagem" alt="produto">
+
+    <button class="btn-voltar" (click)="voltar()">
+      ←
+    </button>
+
+    <span class="badge">
+      {{produto.quantidade}} disponíveis
+    </span>
+
+  </div>
+
+  <!-- CONTEÚDO -->
+  <div class="content">
+
+    <h1>{{produto.nome}}</h1>
+
+    <p class="produtor">
+      👨‍🌾 {{produto.produtor}}
+    </p>
+
+    <p class="cidade">
+      📍 {{produto.cidade}}
+    </p>
+
+    <p class="descricao">
+      {{produto.descricao}}
+    </p>
+
+    <div class="footer">
+
+      <div class="preco-box">
+        <span class="label">Preço</span>
+        <span class="preco">R$ {{produto.preco}}</span>
+      </div>
+
+      <button class="btn-whatsapp" (click)="abrirWhatsApp()">
+        💬 Falar no WhatsApp
+      </button>
+
+    </div>
+
+  </div>
+
+</div>

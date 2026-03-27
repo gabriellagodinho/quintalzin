@@ -5,53 +5,70 @@
   <div class="filtros">
 
     <input 
-    type="text"
-    placeholder="🔎 Buscar produto..."
-    [(ngModel)]="busca"
-    class="input-busca"
+      type="text"
+      placeholder="🔎 Buscar produto..."
+      [(ngModel)]="busca"
+      class="input-busca"
     >
 
     <select [(ngModel)]="cidade" class="select">
-        <option value="">Todas cidades</option>
-        <option *ngFor="let c of cidades">{{c}}</option>
+      <option value="">Todas cidades</option>
+      <option *ngFor="let c of cidades">{{c}}</option>
     </select>
 
     <select [(ngModel)]="tipoProduto" class="select">
-        <option value="">Todos produtos</option>
-        <option *ngFor="let t of tiposProdutos">{{t}}</option>
+      <option value="">Todos produtos</option>
+      <option *ngFor="let t of tiposProdutos">{{t}}</option>
     </select>
 
-    </div>
-    
   </div>
+
   <div class="produtos-grid">
 
-    <div class="produto-card" *ngFor="let produto of produtos">
+    <div 
+  class="produto-card" 
+  *ngFor="let produto of produtos"
+  (click)="verProduto(produto)"
+>
 
-      <div class="produto-img"></div>
+  <div class="produto-img">
+    <img [src]="produto.imagem" alt="produto">
 
-      <div class="produto-info">
+    <!-- BADGE -->
+    <span class="badge">
+      {{produto.quantidade}} disponíveis
+    </span>
+  </div>
 
-        <h2>{{produto.nome}}</h2>
+  <div class="produto-info">
 
-        <p class="produtor">
-          {{produto.produtor}}
-        </p>
+    <h2>{{produto.nome}}</h2>
 
-        <div class="footer-card">
+    <p class="produtor">
+      👨‍🌾 {{produto.produtor}}
+    </p>
 
-          <span class="preco">
-            R$ {{produto.preco}}
-          </span>
+    <p class="cidade">
+      📍 {{produto.cidade}}
+    </p>
 
-          <button class="btn">
-            WhatsApp
-          </button>
+    <div class="footer-card">
 
-        </div>
+      <span class="preco">
+        R$ {{produto.preco}}
+      </span>
 
-      </div>
+      <button 
+        class="btn"
+        (click)="$event.stopPropagation()"
+      >
+        WhatsApp
+      </button>
 
     </div>
 
   </div>
+
+</div>
+
+</div>
