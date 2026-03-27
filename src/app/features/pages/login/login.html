@@ -1,0 +1,44 @@
+<div class="login-page">
+
+  <div class="login-card">
+
+    <h1 class="logo">Quintal<span>🌿</span></h1>
+
+    <p class="subtitulo">
+      Conectando produtores locais
+    </p>
+
+    <form (ngSubmit)="login()">
+
+      <input 
+        type="email" 
+        [(ngModel)]="email" 
+        name="email" 
+        placeholder="Email"
+        class="input" 
+        required
+      />
+
+      <input 
+        type="password" 
+        [(ngModel)]="senha" 
+        name="senha" 
+        placeholder="Senha"
+        class="input" 
+        required
+      />
+
+      <button type="submit" class="btn-login">
+        Entrar
+      </button>
+
+    </form>
+
+    <p class="cadastro">
+      Não possui conta?
+      <span>Criar conta</span>
+    </p>
+
+  </div>
+
+</div>

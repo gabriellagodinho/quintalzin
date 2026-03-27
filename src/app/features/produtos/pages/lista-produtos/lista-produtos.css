@@ -1,0 +1,194 @@
+.container {
+  max-width: 1200px;
+  margin: auto;
+  /* Aumentamos o valor mínimo do clamp ou usamos um valor fixo seguro */
+  padding: 40px 25px; 
+  box-sizing: border-box; /* Garante que o padding não "estique" a largura total */
+}
+
+.titulo{
+  font-size:34px;
+  font-weight:600;
+  margin-bottom:35px;
+  color:#1a1a1a;
+}
+
+/* GRID */
+
+.produtos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  margin-top: 25px;
+  /* Adicione estas linhas: */
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+/* CARD */
+
+.produto-card{
+
+  background:white;
+
+  border-radius:22px;
+
+  overflow:hidden;
+
+  box-shadow:
+  0 10px 30px rgba(0,0,0,0.05);
+
+  transition:all .25s ease;
+
+}
+
+.produto-card:hover{
+
+  transform:translateY(-6px);
+
+  box-shadow:
+  0 18px 40px rgba(0,0,0,0.12);
+
+}
+
+/* IMAGEM */
+
+.produto-img{
+
+  height:160px;
+  width: 100%;
+
+  object-fit: cover;
+
+  border-radius: 18px 18px 0 0;
+
+  background:linear-gradient(
+  135deg,
+  #ffd54f,
+  #ffb300
+  );
+
+}
+
+/* INFO */
+
+.produto-info{
+  padding:22px;
+}
+
+.produto-info h2{
+  font-size:20px;
+  margin:0 0 6px;
+  color:#111;
+}
+
+.produtor{
+  color:#7a7a7a;
+  font-size:14px;
+  margin-bottom:18px;
+}
+
+/* FOOTER */
+
+.footer-card{
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+}
+
+/* PREÇO */
+
+.preco{
+
+  font-size:20px;
+  font-weight:600;
+  color:#ffb300;
+
+}
+
+/* BOTÃO */
+
+.btn{
+
+  border:none;
+
+  background:#ffb300;
+
+  color:#111;
+
+  font-weight:500;
+
+  padding:10px 18px;
+
+  border-radius:30px;
+
+  cursor:pointer;
+
+  transition:all .2s;
+
+}
+
+.btn:hover{
+
+  background:#ffd54f;
+
+  transform:scale(1.05);
+
+}
+
+.filtros{
+
+  display:flex;
+  gap:15px;
+  margin-bottom:30px;
+  flex-wrap:wrap;
+
+}
+
+.input-busca{
+
+  flex:1;
+  min-width:220px;
+
+  padding:14px 18px;
+
+  border-radius:30px;
+
+  border:none;
+
+  box-shadow:
+  0 6px 15px rgba(0,0,0,0.08);
+
+  font-size:15px;
+
+}
+
+.select{
+
+  padding:14px 18px;
+
+  border-radius:30px;
+
+  border:none;
+
+  box-shadow:
+  0 6px 15px rgba(0,0,0,0.08);
+
+  font-size:15px;
+
+  background:white;
+
+}
+
+@media (max-width:768px){
+
+.container{
+
+  padding-left:20px;
+  padding-right:20px;
+
+}
+
+}
