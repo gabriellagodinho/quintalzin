@@ -1,46 +1,60 @@
 <div class="container" *ngIf="produto">
 
-  <!-- HEADER COM IMAGEM -->
-  <div class="header">
+  <button class="btn-voltar" (click)="voltar()">
+    ← Voltar
+  </button>
 
-    <img [src]="produto.imagem" alt="produto">
+  <div class="detalhe-layout">
 
-    <button class="btn-voltar" (click)="voltar()">
-      ←
-    </button>
+    <div class="imagem-section">
 
-    <span class="badge">
-      {{produto.quantidade}} disponíveis
-    </span>
+      <img [src]="produto.imagem" alt="produto">
 
-  </div>
+      <span class="badge">
+        {{produto.quantidade}} disponíveis
+      </span>
 
-  <!-- CONTEÚDO -->
-  <div class="content">
+    </div>
 
-    <h1>{{produto.nome}}</h1>
+    <div class="info-section">
 
-    <p class="produtor">
-      👨‍🌾 {{produto.produtor}}
-    </p>
+      <span class="categoria">
+        🌱 Produto Local
+      </span>
 
-    <p class="cidade">
-      📍 {{produto.cidade}}
-    </p>
+      <h1 class="nome">
+        {{produto.nome}}
+      </h1>
 
-    <p class="descricao">
-      {{produto.descricao}}
-    </p>
+      <p class="produtor">
+        👨‍🌾 {{produto.produtor}}
+      </p>
 
-    <div class="footer">
+      <p class="cidade">
+        📍 {{produto.cidade}}
+      </p>
+
+      <p class="descricao">
+        {{produto.descricao}}
+      </p>
 
       <div class="preco-box">
-        <span class="label">Preço</span>
-        <span class="preco">R$ {{produto.preco}}</span>
+
+        <span class="label">
+          Preço
+        </span>
+
+        <span class="preco">
+          R$ {{produto.preco}}
+        </span>
+
       </div>
 
-      <button class="btn-whatsapp" (click)="abrirWhatsApp()">
-        💬 Falar no WhatsApp
+      <button
+        class="btn-whatsapp"
+        (click)="abrirWhatsApp()"
+      >
+        💬 Falar com produtor
       </button>
 
     </div>
