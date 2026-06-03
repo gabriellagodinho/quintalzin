@@ -1,43 +1,111 @@
 <div class="login-page">
 
-  <div class="login-card">
+  <div class="login-left">
 
-    <h1 class="logo">Quintal<span>🌿</span></h1>
+    <div>
 
-    <p class="subtitulo">
-      Conectando produtores locais
-    </p>
+      <div class="badge">
+        📍 Rondônia, Brasil
+      </div>
+
+      <h1 class="hero-title">
+        Do campo <br>
+        <span>pra sua mesa.</span>
+      </h1>
+
+      <p class="hero-subtitle">
+        Produtos frescos de agricultores locais,
+        sem intermediários.
+      </p>
+
+      <div class="stats">
+
+        <div>
+          <span class="stat-number">42+</span>
+          <span class="stat-label">Produtores</span>
+        </div>
+
+        <div>
+          <span class="stat-number">3</span>
+          <span class="stat-label">Cidades</span>
+        </div>
+
+        <div>
+          <span class="stat-number">120+</span>
+          <span class="stat-label">Produtos</span>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="login-right">
+
+    <div class="brand">
+
+      <div class="brand-icon">
+        Q
+      </div>
+
+      <span>
+        Quintalzin
+      </span>
+
+    </div>
+
+    <div class="form-header">
+
+      <h2>
+        Bem-vindo de volta
+      </h2>
+
+      <p>
+        Acesse sua conta para visualizar os produtos.
+      </p>
+
+    </div>
 
     <form (ngSubmit)="login()">
 
-      <input 
-        type="email" 
-        [(ngModel)]="email" 
-        name="email" 
-        placeholder="Email"
-        class="input" 
-        required
-      />
+      <div class="field">
 
-      <input 
-        type="password" 
-        [(ngModel)]="senha" 
-        name="senha" 
-        placeholder="Senha"
-        class="input" 
-        required
-      />
+        <label>E-mail</label>
 
-      <button type="submit" class="btn-login">
-        Entrar
+        <input
+          type="email"
+          [(ngModel)]="email"
+          name="email"
+          placeholder="seu@email.com"
+          required
+        />
+
+      </div>
+
+      <div class="field">
+
+        <label>Senha</label>
+
+        <input
+          type="password"
+          [(ngModel)]="senha"
+          name="senha"
+          placeholder="••••••••"
+          required
+        />
+
+      </div>
+
+      <button type="submit">
+        Entrar →
       </button>
 
     </form>
 
-    <p class="cadastro">
-      Não possui conta?
-      <span>Criar conta</span>
-    </p>
+    <div class="demo-box">
+      Demo: qualquer e-mail e senha
+    </div>
 
   </div>
 
