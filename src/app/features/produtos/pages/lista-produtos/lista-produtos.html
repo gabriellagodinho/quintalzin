@@ -1,74 +1,95 @@
-<div class="container">
+<div class="page">
 
-  <h1 class="titulo">Quintalzin 🌱</h1>
+  <section class="hero">
 
-  <div class="filtros">
+    <span class="hero-badge">
+      🌱 Direto do produtor
+    </span>
 
-    <input 
+    <h1>
+      Produtos frescos da sua região
+    </h1>
+
+    <p>
+      Conectando agricultores locais diretamente aos consumidores.
+    </p>
+
+  </section>
+
+  <section class="filtros">
+
+    <input
       type="text"
-      placeholder="🔎 Buscar produto..."
+      placeholder="Buscar produto ou produtor..."
       [(ngModel)]="busca"
       class="input-busca"
     >
 
     <select [(ngModel)]="cidade" class="select">
-      <option value="">Todas cidades</option>
+      <option value="">Todas as cidades</option>
       <option *ngFor="let c of cidades">{{c}}</option>
     </select>
 
     <select [(ngModel)]="tipoProduto" class="select">
-      <option value="">Todos produtos</option>
+      <option value="">Todos os produtos</option>
       <option *ngFor="let t of tiposProdutos">{{t}}</option>
     </select>
 
-  </div>
+  </section>
 
-  <div class="produtos-grid">
+  <section class="produtos-grid">
 
-    <div 
-  class="produto-card" 
-  *ngFor="let produto of produtos"
-  (click)="verProduto(produto)"
->
+    <div
+      class="produto-card"
+      *ngFor="let produto of produtos"
+      (click)="verProduto(produto)"
+    >
 
-  <div class="produto-img">
-    <img [src]="produto.imagem" alt="produto">
+      <div class="produto-img">
 
-    <!-- BADGE -->
-    <span class="badge">
-      {{produto.quantidade}} disponíveis
-    </span>
-  </div>
+        <img [src]="produto.imagem" alt="produto">
 
-  <div class="produto-info">
+        <span class="badge">
+          {{produto.quantidade}} disponíveis
+        </span>
 
-    <h2>{{produto.nome}}</h2>
+      </div>
 
-    <p class="produtor">
-      👨‍🌾 {{produto.produtor}}
-    </p>
+      <div class="produto-info">
 
-    <p class="cidade">
-      📍 {{produto.cidade}}
-    </p>
+        <p class="categoria">
+          Produto Local
+        </p>
 
-    <div class="footer-card">
+        <h2>{{produto.nome}}</h2>
 
-      <span class="preco">
-        R$ {{produto.preco}}
-      </span>
+        <p class="produtor">
+          👨‍🌾 {{produto.produtor}}
+        </p>
 
-      <button 
-        class="btn"
-        (click)="$event.stopPropagation()"
-      >
-        WhatsApp
-      </button>
+        <p class="cidade">
+          📍 {{produto.cidade}}
+        </p>
+
+        <div class="footer-card">
+
+          <span class="preco">
+            R$ {{produto.preco}}
+          </span>
+
+          <button
+            class="btn"
+            (click)="$event.stopPropagation()"
+          >
+            Falar com produtor
+          </button>
+
+        </div>
+
+      </div>
 
     </div>
 
-  </div>
-
-</div>
+  </section>
 
 </div>
