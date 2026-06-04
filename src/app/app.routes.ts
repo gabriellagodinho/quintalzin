@@ -29,6 +29,13 @@ export const routes: Routes = [
       {
         path: 'produto/:id',
         component: DetalheProdutoComponent
+      },
+
+      {
+        path: 'produtor/:id',
+        loadComponent: () =>
+          import('./features/produtores/pages/detalhe-produtor/detalhe-produtor')
+            .then(m => m.DetalheProdutorComponent)
       }
 
     ]

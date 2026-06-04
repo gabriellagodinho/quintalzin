@@ -3,15 +3,15 @@
   <section class="hero">
 
     <span class="hero-badge">
-      🌱 Direto do produtor
+      Agricultura Familiar
     </span>
 
     <h1>
-      Produtos frescos da sua região
+      Encontre produtos frescos produzidos perto de você
     </h1>
 
     <p>
-      Conectando agricultores locais diretamente aos consumidores.
+      Conectamos consumidores a produtores locais, fortalecendo a economia regional e valorizando quem produz.
     </p>
 
   </section>
@@ -26,13 +26,27 @@
     >
 
     <select [(ngModel)]="cidade" class="select">
-      <option value="">Todas as cidades</option>
-      <option *ngFor="let c of cidades">{{c}}</option>
+
+      <option value="">
+        Todas as cidades
+      </option>
+
+      <option *ngFor="let c of cidades">
+        {{ c }}
+      </option>
+
     </select>
 
     <select [(ngModel)]="tipoProduto" class="select">
-      <option value="">Todos os produtos</option>
-      <option *ngFor="let t of tiposProdutos">{{t}}</option>
+
+      <option value="">
+        Todas as categorias
+      </option>
+
+      <option *ngFor="let t of tiposProdutos">
+        {{ t }}
+      </option>
+
     </select>
 
   </section>
@@ -41,47 +55,74 @@
 
     <div
       class="produto-card"
-      *ngFor="let produto of produtos"
+      *ngFor="let produto of produtosFiltrados"
       (click)="verProduto(produto)"
     >
 
       <div class="produto-img">
 
-        <img [src]="produto.imagem" alt="produto">
+        <img
+          [src]="produto.imagem"
+          [alt]="produto.nome"
+        >
 
         <span class="badge">
-          {{produto.quantidade}} disponíveis
+          {{ produto.quantidade }} disponíveis
         </span>
 
       </div>
 
       <div class="produto-info">
 
-        <p class="categoria">
-          Produto Local
-        </p>
+        <span class="categoria">
+          {{ produto.categoria }}
+        </span>
 
-        <h2>{{produto.nome}}</h2>
+        <h2>
+          {{ produto.nome }}
+        </h2>
 
-        <p class="produtor">
-          👨‍🌾 {{produto.produtor}}
-        </p>
+        <div class="produtor-box">
 
-        <p class="cidade">
-          📍 {{produto.cidade}}
-        </p>
+          <div class="avatar">
+            {{ produto.produtor.charAt(0) }}
+          </div>
+
+          <div>
+
+            <p class="produtor-nome produtor-link"
+            (click)="$event.stopPropagation()"
+          >
+            {{ produto.produtor }}
+            </p>
+
+            <p class="cidade">
+              {{ produto.cidade }}
+            </p>
+
+          </div>
+
+        </div>
 
         <div class="footer-card">
 
-          <span class="preco">
-            R$ {{produto.preco}}
-          </span>
+          <div>
+
+            <span class="label-preco">
+              Valor
+            </span>
+
+            <div class="preco">
+              R$ {{ produto.preco }}/{{ produto.unidade }}
+            </div>
+
+          </div>
 
           <button
             class="btn"
             (click)="$event.stopPropagation()"
           >
-            Falar com produtor
+            Contato
           </button>
 
         </div>
