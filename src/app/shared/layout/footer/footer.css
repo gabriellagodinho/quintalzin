@@ -1,0 +1,25 @@
+.footer{
+
+  margin-top:80px;
+
+  border-top:1px solid #ececec;
+
+  background:white;
+
+}
+
+.footer-content{
+
+  max-width:1400px;
+
+  margin:auto;
+
+  padding:32px;
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+}

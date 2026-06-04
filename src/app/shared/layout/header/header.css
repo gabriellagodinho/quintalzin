@@ -1,0 +1,75 @@
+.header{
+
+  position:sticky;
+  top:0;
+
+  background:rgba(255,255,255,.95);
+
+  backdrop-filter:blur(10px);
+
+  border-bottom:1px solid #ececec;
+
+  z-index:100;
+
+}
+
+.header-container{
+
+  max-width:1400px;
+
+  height:72px;
+
+  margin:auto;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:space-between;
+
+  padding:0 32px;
+
+}
+
+.logo{
+
+  font-family:'Fraunces', serif;
+
+  font-size:28px;
+
+  color:var(--green-900);
+
+}
+
+.nav{
+
+  display:flex;
+  gap:32px;
+
+}
+
+.nav a{
+
+  text-decoration:none;
+
+  color:var(--gray-700);
+
+  font-weight:500;
+
+}
+
+.btn-login{
+
+  border:none;
+
+  height:42px;
+
+  padding:0 18px;
+
+  border-radius:12px;
+
+  background:var(--green-900);
+
+  color:white;
+
+}

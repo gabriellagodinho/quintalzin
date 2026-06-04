@@ -1,0 +1,31 @@
+.btn{
+
+  height:52px;
+
+  padding:0 20px;
+
+  border:none;
+
+  border-radius:12px;
+
+  font-weight:600;
+
+  cursor:pointer;
+
+  transition:.3s;
+
+}
+
+.btn-primary{
+
+  background:var(--green-900);
+
+  color:white;
+
+}
+
+.btn-primary:hover{
+
+  background:var(--green-800);
+
+}
